@@ -5,13 +5,16 @@
 class Game {
     constructor() {
         this.missed = 0;
-        this.phrases = createPhrases();
+        this.phrases = this.createPhrases();
         this.activePhrase = null;
     }
 
     startGame() {
 
     }
+
+    // Creates phrases for use in game
+    // @return {array} An array of phrases that could be used in the game
 
     createPhrases() {
         const phraseArray = [
