@@ -27,11 +27,12 @@ class Phrase {
         }
     }
 
-    checkLetter() {
-
+    checkLetter(letter) {
+        let bool = this.phrase.includes(letter);
+        return bool;
     }
 
-    showMatchedLetter() {
+    showMatchedLetter(letter) {
 
     }
 }
