@@ -27,6 +27,9 @@ class Phrase {
         }
     }
 
+    // Checks if passed letter is in phrase
+    //  @param (string) letter - Letter to check
+
     checkLetter(letter) {
         let bool = this.phrase.includes(letter);
         return bool;
