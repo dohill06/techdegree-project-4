@@ -7,8 +7,24 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
     }
 
-    addPhraseToDisplay() {
+    // Display phrase on game board
 
+    addPhraseToDisplay() {
+        const phrase = this.phrase;
+        const phraseChars = document.querySelector('#phrase ul');
+
+        for (let char of phrase) {
+            const li = document.createElement('li');
+            if (char === ' ') {
+                li.classList.add('space');
+                li.textContent = char;
+                phraseChars.appendChild(li);
+            } else {
+                li.classList.add('hide', 'letter', char);
+                li.textContent = char;
+                phraseChars.appendChild(li);
+            }
+        }
     }
 
     checkLetter() {
