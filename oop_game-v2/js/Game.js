@@ -9,8 +9,12 @@ class Game {
         this.activePhrase = null;
     }
 
-    startGame() {
+    // Begins game by selecting a random phrase and displaying it to user
 
+    startGame() {
+        document.querySelector('#overlay').style.display = 'none';
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
     }
 
     // Creates phrases for use in game

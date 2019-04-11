@@ -4,3 +4,7 @@
 
 //  const game = new Game();
 //  game.getRandomPhrase().addPhraseToDisplay();
+
+// const game = new Game();
+// game.startGame();
+// console.log(game);
