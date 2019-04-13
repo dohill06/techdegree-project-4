@@ -40,8 +40,8 @@ class Game {
         return this.phrases[phraseIndex];
     }
 
-    handleInteraction() {
-
+    handleInteraction(button) {
+        console.log(button);
     }
 
     // Increases the value of the missed property
