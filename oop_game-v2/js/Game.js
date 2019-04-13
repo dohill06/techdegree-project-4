@@ -44,8 +44,18 @@ class Game {
 
     }
 
-    removeLife() {
+    // Increases the value of the missed property
+    // Removes a life from the scoreboard
+    // Checks if player has remaining lives and ends game if player is out
 
+    removeLife() {
+        const hearts = document.querySelector('img[src="images/liveHeart.png"]');
+        hearts.src = 'images/lostHeart.png';
+        this.missed++;
+
+        if (this.missed === 5) {
+            this.gameOver();
+        }
     }
 
     //  Checks for winning move
