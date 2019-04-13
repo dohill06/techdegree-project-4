@@ -40,8 +40,33 @@ class Game {
         return this.phrases[phraseIndex];
     }
 
+    //   Handles onscreen keyboard clicks and button entry
+    //   @param(button) The clicked element OR button entry
+
     handleInteraction(button) {
-        console.log(button);
+        if (this.activePhrase.checkLetter(button)) {
+            this.activePhrase.showMatchedLetter(button);
+            const keys = document.querySelectorAll('.key');
+
+            for (let char of keys) {
+                if (char.textContent === button) {
+                    char.classList.replace('key', 'chosen');
+
+                    if (this.checkForWin()) {
+                        this.gameOver(true);
+                    }
+                }
+            }
+        } else {
+            const keys = document.querySelectorAll('.key');
+
+            for (let char of keys) {
+                if (char.textContent === button) {
+                    char.classList.replace('key', 'wrong');
+                    this.removeLife();
+                }
+            }
+        }
     }
 
     // Increases the value of the missed property
