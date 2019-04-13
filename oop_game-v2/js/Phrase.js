@@ -35,6 +35,9 @@ class Phrase {
         return bool;
     }
 
+    //  Displays passed letter on screen after a match is found
+    //  @param (string) letter - Letter to display
+
     showMatchedLetter(letter) {
         const phraseLi = document.getElementsByClassName(letter);
 
