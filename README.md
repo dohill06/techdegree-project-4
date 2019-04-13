@@ -2,4 +2,6 @@
 
 Added enter keyup to start button
 
-Added keyboard listener and warning for wrong entry key
+Added keyboard listener and warning for wrong entry key 
+
+Prevented Tab key default

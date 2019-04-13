@@ -44,5 +44,9 @@ document.addEventListener('keydown', (e) => {
             btnMessage.style.color = 'red';
         }
     }
+    // prevent tab key default
+    if (e.keyCode === 9) {
+        e.preventDefault();
+    }
 
 });
