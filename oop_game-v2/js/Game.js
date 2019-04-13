@@ -66,8 +66,22 @@ class Game {
         return phraseLi.length === 0;
     }
 
-    gameOver() {
+    //  Displays game over message
+    //  @param {boolean} gameWon - Whether or not the user won the game
 
+    gameOver(gameWon) {
+        const overlay = document.querySelector('#overlay');
+        const gameOverMessage = document.querySelector('#game-over-message');
+
+        if (gameWon) {
+            overlay.style.display = '';
+            overlay.classList.replace('start', 'win');
+            gameOverMessage.textContent = 'Great job, you won!';
+        } else {
+            overlay.style.display = '';
+            overlay.classList.replace('start', 'lose');
+            gameOverMessage.textContent = 'Next time you\'ll do better!';
+        }
     }
 
 }
