@@ -36,6 +36,10 @@ class Phrase {
     }
 
     showMatchedLetter(letter) {
+        const phraseLi = document.getElementsByClassName(letter);
 
+        for (let list of phraseLi) {
+            list.classList.replace('hide', 'show');
+        }
     }
 }
