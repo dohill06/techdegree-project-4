@@ -48,8 +48,12 @@ class Game {
 
     }
 
-    checkForWin() {
+    //  Checks for winning move
+    // @return {boolean} True if game is won, false if game wasn't 
 
+    checkForWin() {
+        const phraseLi = document.getElementsByClassName('hide');
+        return phraseLi.length === 0;
     }
 
     gameOver() {
