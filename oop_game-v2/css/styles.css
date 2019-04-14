@@ -60,6 +60,11 @@ button {
   cursor: pointer;
 }
 
+/* Removed default button focus outline */
+button:focus {
+  outline: none;
+}
+
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
