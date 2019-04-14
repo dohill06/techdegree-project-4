@@ -126,6 +126,7 @@ class Game {
 
     // Checks for elements in phrase with the 'hide' class for use in the 'right' rgba
     // @return {.hide.length} Returns the number of elements with the 'hide' class
+    
     checkForChosen() {
         const phraseLi = document.getElementsByClassName('hide');
         return phraseLi.length;
