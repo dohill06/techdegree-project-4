@@ -7,6 +7,7 @@ class Game {
         this.missed = 0;
         this.phrases = this.createPhrases();
         this.activePhrase = null;
+        this.count = 6;
     }
 
     // Begins game by selecting a random phrase and displaying it to user
@@ -47,11 +48,12 @@ class Game {
         if (this.activePhrase.checkLetter(button)) {
             this.activePhrase.showMatchedLetter(button);
             const keys = document.querySelectorAll('.key');
-
+            const page = document.querySelector('body');
+           
             for (let char of keys) {
                 if (char.textContent === button) {
                     char.classList.replace('key', 'chosen');
-
+                    page.style.backgroundColor = this.rgbaShift(120, 207, 130, this.checkForChosen());
                     if (this.checkForWin()) {
                         this.gameOver(true);
                     }
@@ -59,11 +61,15 @@ class Game {
             }
         } else {
             const keys = document.querySelectorAll('.key');
-
+            const page = document.querySelector('body');
+                               
             for (let char of keys) {
                 if (char.textContent === button) {
                     char.classList.replace('key', 'wrong');
                     this.removeLife();
+                    this.count--;
+                    page.style.backgroundColor = this.rgbaShift(217, 69, 69, this.count);
+                    
                 }
             }
         }
@@ -107,6 +113,22 @@ class Game {
             overlay.classList.replace('start', 'lose');
             gameOverMessage.textContent = 'Next time you\'ll do better!';
         }
+    }
+
+    // Shifts body element color based on right or wrong answers
+    // @return {rgba} Returns rgba value
+
+    rgbaShift(r, g, b, a) {
+        let opacity = 1/a;
+        opacity.toPrecision(6);
+        return `rgba(${r},${g},${b},${opacity})`
+    }
+
+    // Checks for elements in phrase with the 'hide' class for use in the 'right' rgba
+    // @return {.hide.length} Returns the number of elements with the 'hide' class
+    checkForChosen() {
+        const phraseLi = document.getElementsByClassName('hide');
+        return phraseLi.length;
     }
 
 }
