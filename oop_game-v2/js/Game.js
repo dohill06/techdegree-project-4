@@ -14,7 +14,9 @@ class Game {
 
     startGame() {
         const page = document.querySelector('body');
+        const overlay = document.querySelector('#overlay');
         page.removeAttribute('style');
+        overlay.className = 'start';
         document.querySelector('#overlay').style.display = 'none';       
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
@@ -120,7 +122,7 @@ class Game {
     }
 
     // resets game board at end of game
-    
+
     startOver() {
         this.missed = 0;
         this.count = 6;
