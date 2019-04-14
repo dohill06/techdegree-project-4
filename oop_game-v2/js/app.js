@@ -6,6 +6,7 @@ let game;
 const startButton = document.querySelector('#btn__reset');
 const key = document.querySelector('#qwerty');
 const btnMessage = document.createElement('p');
+const overlay = document.querySelector('#overlay');
 
 // Added warning for wrong entry key
 btnMessage.textContent = 'Use only lowercase letters!';
@@ -15,6 +16,10 @@ key.appendChild(btnMessage);
 
 // Start on click
 startButton.addEventListener('click', () => {
+    // Added page reload if gameOver
+    if (overlay.className === 'lose' || overlay.className === 'win') {
+        location.reload();
+    }
     game = new Game();
     game.startGame();
 });
@@ -23,6 +28,10 @@ startButton.addEventListener('click', () => {
 document.addEventListener('keyup', (e) => {
 
     if (e.keyCode === 13 && startButton.parentNode.style.display === '') {
+        // Added page reload if gameOver
+        if (overlay.className === 'lose' || overlay.className === 'win') {
+            location.reload();
+        }
         game = new Game();
         game.startGame();
     }

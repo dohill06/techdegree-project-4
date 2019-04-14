@@ -8,4 +8,6 @@ Added warning for wrong entry key that resets
 
 Prevented Tab key default
 
-Removed default button focus outline
+Removed default button focus outline in CSS
+
+Added page reload to Start Game button if gameOver
