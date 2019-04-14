@@ -16,10 +16,6 @@ key.appendChild(btnMessage);
 
 // Start on click
 startButton.addEventListener('click', () => {
-    // Added page reload if gameOver
-    if (overlay.className === 'lose' || overlay.className === 'win') {
-        location.reload();
-    }
     game = new Game();
     game.startGame();
 });
@@ -28,10 +24,6 @@ startButton.addEventListener('click', () => {
 document.addEventListener('keyup', (e) => {
 
     if (e.keyCode === 13 && startButton.parentNode.style.display === '') {
-        // Added page reload if gameOver
-        if (overlay.className === 'lose' || overlay.className === 'win') {
-            location.reload();
-        }
         game = new Game();
         game.startGame();
     }

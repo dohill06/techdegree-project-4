@@ -14,4 +14,3 @@ Shift body element color based on right or wrong answers
 with the rgbaShift method and supporting method and variable
 i.e. checkForChosen method and this.count variable
 
-Added page reload to Start Game button if gameOver
